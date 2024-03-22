@@ -3,7 +3,9 @@ import "./header.css";
 const Header = () => {
 	return (
 		<>
-			<h1>Todo List</h1>
+			<header>
+				<h1>Todo List</h1>
+			</header>
 		</>
 	);
 };

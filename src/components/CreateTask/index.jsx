@@ -1,3 +1,5 @@
+import Task from "../Task";
+
 import "./createTask.css";
 
 const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
@@ -5,12 +7,26 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 		<>
 			<main>
 				<div>
+					{taskList.map((task, i) => {
+						return (
+							<>
+								<Task key={i} task={task} />
+							</>
+						);
+					})}
+				</div>
+				<div>
 					<form
 						onSubmit={(e) => {
-							e.preventDefault();
-							const listTemp = [...taskList];
-							listTemp.push(taskInput);
-							setTaskList(listTemp);
+							if (taskInput !== "") {
+								e.preventDefault();
+								const listTemp = [...taskList];
+								listTemp.push(taskInput);
+								setTaskInput("");
+								setTaskList(listTemp);
+							} else {
+								e.preventDefault();
+							}
 						}}>
 						<input
 							type="text"
