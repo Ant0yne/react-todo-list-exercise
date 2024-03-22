@@ -8,7 +8,15 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 			<main>
 				<div>
 					{taskList.map((task, index) => {
-						return <Task key={index} task={task} />;
+						return (
+							<Task
+								key={index}
+								task={task}
+								index={index}
+								taskList={taskList}
+								setTaskList={setTaskList}
+							/>
+						);
 					})}
 				</div>
 				<div>

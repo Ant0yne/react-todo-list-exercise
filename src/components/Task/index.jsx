@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./task.css";
 
-const Task = ({ task }) => {
+const Task = ({ task, index, taskList, setTaskList }) => {
 	const [isLine, setIsLine] = useState(false);
 
 	return (
@@ -21,6 +21,16 @@ const Task = ({ task }) => {
 					htmlFor={`checkbox-${task}`}>
 					{task}
 				</label>
+				<input
+					type="button"
+					name={`button-${task}`}
+					value={"X"}
+					onClick={() => {
+						const listTemp = [...taskList];
+						listTemp.splice(index, 1);
+						setTaskList(listTemp);
+					}}
+				/>
 			</div>
 		</>
 	);
