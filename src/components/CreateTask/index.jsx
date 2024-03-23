@@ -51,15 +51,27 @@ const CreateTask = ({
 				<div>
 					{/* create un task (checkbox, task text, delete button) for each element in the taskList state */}
 					{taskList.map((task, index) => {
-						return (
-							<Task
-								key={task.id}
-								task={task.text}
-								index={index}
-								taskList={taskList}
-								setTaskList={setTaskList}
-							/>
-						);
+						if (taskSearch === "") {
+							return (
+								<Task
+									key={task.id}
+									task={task.text}
+									index={index}
+									taskList={taskList}
+									setTaskList={setTaskList}
+								/>
+							);
+						} else if (task.text.indexOf(taskSearch) !== -1) {
+							return (
+								<Task
+									key={task.id}
+									task={task.text}
+									index={index}
+									taskList={taskList}
+									setTaskList={setTaskList}
+								/>
+							);
+						}
 					})}
 				</div>
 				<div>

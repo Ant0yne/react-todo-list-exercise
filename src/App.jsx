@@ -11,7 +11,7 @@ function App() {
 	const [taskInput, setTaskInput] = useState("");
 	// STRING -> state for the value of the input typed by the user to search task
 	const [taskSearch, setTaskSearch] = useState("");
-	// ARRAY -> state for the actual list of task
+	// ARRAY -> state for the actual list of task -> task is an OBJECT -> text:STRING id:NUMBER
 	const [taskList, setTaskList] = useState([]);
 
 	return (
