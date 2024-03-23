@@ -2,9 +2,7 @@ import { useState } from "react";
 
 import "./task.css";
 
-const Task = ({ task, index, taskList, setTaskList }) => {
-	const [isLine, setIsLine] = useState(false);
-
+const Task = ({ task, checked, index, taskList, setTaskList }) => {
 	/**
 	 * delete the task when the button is clicked
 	 */
@@ -18,18 +16,18 @@ const Task = ({ task, index, taskList, setTaskList }) => {
 	 *
 	 * @param {Object} e
 	 *
-	 * if the checkbox is checked -> toggle the isLine state then move the task to the bottom of the taskList and rerender
-	 * if the checkbox is unchecked -> toggle the isLine state then move the task to the top of the taskList and rerender
+	 * if the checkbox is checked -> toggle the checked key value then move the task to the bottom of the taskList and rerender
+	 * if the checkbox is unchecked -> toggle the checked key value then move the task to the top of the taskList and rerender
 	 */
 	const handleCheckedTask = async (e) => {
 		if (e.target.checked) {
-			setIsLine(true);
 			const listTemp = [...taskList];
+			listTemp[index].checked = true;
 			listTemp.push(listTemp.splice(index, 1)[0]);
 			setTaskList(listTemp);
 		} else {
-			setIsLine(false);
 			const listTemp = [...taskList];
+			listTemp[index].checked = false;
 			listTemp.unshift(listTemp.splice(index, 1)[0]);
 			setTaskList(listTemp);
 		}
@@ -42,11 +40,12 @@ const Task = ({ task, index, taskList, setTaskList }) => {
 					type="checkbox"
 					name={`checkbox-${task}`}
 					id={`checkbox-${task}`}
+					checked={checked}
 					onChange={handleCheckedTask}
 				/>
 				<label
-					// if isLine state is true, line-through the task text
-					style={{ textDecoration: `${isLine ? "line-through" : ""}` }}
+					// if the checked key value of the state is true, line-through the task text
+					style={{ textDecoration: `${checked ? "line-through" : ""}` }}
 					htmlFor={`checkbox-${task}`}>
 					{task}
 				</label>

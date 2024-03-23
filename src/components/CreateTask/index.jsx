@@ -14,7 +14,7 @@ const CreateTask = ({
 	 *
 	 * @param {Object} e
 	 *
-	 * check if the input is not empty -> add to the taskList input the new task & render it
+	 * check if the input is not empty -> reset the taskInput state then add to the taskList input the new task & render it
 	 */
 	const handleSubmit = (e) => {
 		if (taskInput !== "") {
@@ -23,6 +23,7 @@ const CreateTask = ({
 			const taskTemp = {
 				text: taskInput.toLowerCase(),
 				id: Math.floor(Math.random() * 100000) + 1,
+				checked: false,
 			};
 			TaskListTemp.push(taskTemp);
 			setTaskInput("");
@@ -49,23 +50,30 @@ const CreateTask = ({
 					</div>
 				)}
 				<div>
-					{/* create un task (checkbox, task text, delete button) for each element in the taskList state */}
 					{taskList.map((task, index) => {
+						{
+							/* if there is no search -> create un task (checkbox, task text, delete button) for each element in the taskList state */
+						}
 						if (taskSearch === "") {
 							return (
 								<Task
 									key={task.id}
 									task={task.text}
+									checked={task.checked}
 									index={index}
 									taskList={taskList}
 									setTaskList={setTaskList}
 								/>
 							);
+							{
+								/* update the task list rendered with all the task that include the taskSearch state in their text key */
+							}
 						} else if (task.text.indexOf(taskSearch) !== -1) {
 							return (
 								<Task
 									key={task.id}
 									task={task.text}
+									checked={task.checked}
 									index={index}
 									taskList={taskList}
 									setTaskList={setTaskList}
