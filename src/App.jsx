@@ -9,8 +9,10 @@ import "./App.css";
 function App() {
 	// STRING -> state for the value of the input typed by the user
 	const [taskInput, setTaskInput] = useState("");
-	// ARRAY -> state for the actual list of task -> task is an OBJECT -> id:NUMBER text:STRING checked:BOOLEAN
-	const [taskList, setTaskList] = useState([]);
+	// ARRAY -> state for the actual list of task checked -> task is an OBJECT -> id:NUMBER text:STRING checked:BOOLEAN
+	const [taskCheckedList, setTaskCheckedList] = useState([]);
+	// ARRAY -> state for the actual list of task unchecked -> task is an OBJECT -> id:NUMBER text:STRING checked:BOOLEAN
+	const [taskUncheckedList, setTaskUncheckedList] = useState([]);
 
 	return (
 		<>
@@ -18,10 +20,10 @@ function App() {
 			<CreateTask
 				taskInput={taskInput}
 				setTaskInput={setTaskInput}
-				taskList={taskList}
-				setTaskList={setTaskList}
-				// tokenList={tokenList}
-				// setTokenList={setTokenList}
+				taskCheckedList={taskCheckedList}
+				setTaskCheckedList={setTaskCheckedList}
+				taskUncheckedList={taskUncheckedList}
+				setTaskUncheckedList={setTaskUncheckedList}
 			/>
 			<Footer />
 		</>

@@ -5,10 +5,10 @@ import "./createTask.css";
 const CreateTask = ({
 	taskInput,
 	setTaskInput,
-	taskList,
-	setTaskList,
-	// tokenList,
-	// setTokenList,
+	taskCheckedList,
+	setTaskCheckedList,
+	taskUncheckedList,
+	setTaskUncheckedList,
 }) => {
 	/**
 	 *
@@ -19,7 +19,7 @@ const CreateTask = ({
 	const handleSubmit = (e) => {
 		if (taskInput !== "") {
 			e.preventDefault();
-			const TaskListTemp = [...taskList];
+			const TaskListTemp = [...taskUncheckedList];
 			const taskTemp = {
 				text: taskInput.toLowerCase(),
 				id: Math.floor(Math.random() * 100000) + 1,
@@ -27,7 +27,7 @@ const CreateTask = ({
 			};
 			TaskListTemp.push(taskTemp);
 			setTaskInput("");
-			setTaskList(TaskListTemp);
+			setTaskUncheckedList(TaskListTemp);
 		} else {
 			e.preventDefault();
 		}
@@ -37,20 +37,36 @@ const CreateTask = ({
 		<>
 			<main>
 				<div>
-					{/* create un task (checkbox, task text, delete button) for each element in the taskList state */}
-					{taskList.map((task, index) => {
+					{/* create un task (checkbox, task text, delete button) for each item in the taskList state */}
+					{taskUncheckedList.map((task, index) => {
 						return (
 							<Task
 								key={task.id}
 								task={task.text}
 								index={index}
 								checked={task.checked}
-								taskList={taskList}
-								setTaskList={setTaskList}
+								taskCheckedList={taskCheckedList}
+								setTaskCheckedList={setTaskCheckedList}
+								taskUncheckedList={taskUncheckedList}
+								setTaskUncheckedList={setTaskUncheckedList}
+							/>
+						);
+					})}
+					{taskCheckedList.map((task, index) => {
+						return (
+							<Task
+								key={task.id}
+								task={task.text}
+								index={index}
+								taskCheckedList={taskCheckedList}
+								setsetTaskCheckedListTaskList={setTaskCheckedList}
+								taskUncheckedList={taskUncheckedList}
+								setTaskUncheckedList={setTaskUncheckedList}
 							/>
 						);
 					})}
 				</div>
+
 				<div>
 					<form onSubmit={handleSubmit}>
 						<input
