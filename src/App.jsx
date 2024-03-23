@@ -7,8 +7,10 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
-	// STRING -> state for the value of the input typed by the user
+	// STRING -> state for the value of the input typed by the user to create task
 	const [taskInput, setTaskInput] = useState("");
+	// STRING -> state for the value of the input typed by the user to search task
+	const [taskSearch, setTaskSearch] = useState("");
 	// ARRAY -> state for the actual list of task
 	const [taskList, setTaskList] = useState([]);
 
@@ -20,6 +22,8 @@ function App() {
 				setTaskInput={setTaskInput}
 				taskList={taskList}
 				setTaskList={setTaskList}
+				taskSearch={taskSearch}
+				setTaskSearch={setTaskSearch}
 			/>
 			<Footer />
 		</>

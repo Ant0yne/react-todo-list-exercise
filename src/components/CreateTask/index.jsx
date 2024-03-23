@@ -2,7 +2,14 @@ import Task from "../Task";
 
 import "./createTask.css";
 
-const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
+const CreateTask = ({
+	taskInput,
+	setTaskInput,
+	taskList,
+	setTaskList,
+	taskSearch,
+	setTaskSearch,
+}) => {
 	/**
 	 *
 	 * @param {Object} e
@@ -28,6 +35,19 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 	return (
 		<>
 			<main>
+				{taskList.length > 0 && (
+					<div>
+						<input
+							type="text"
+							placeholder="Search task..."
+							name="taskSrch"
+							value={taskSearch}
+							onChange={(e) => {
+								setTaskSearch(e.target.value);
+							}}
+						/>
+					</div>
+				)}
 				<div>
 					{/* create un task (checkbox, task text, delete button) for each element in the taskList state */}
 					{taskList.map((task, index) => {
