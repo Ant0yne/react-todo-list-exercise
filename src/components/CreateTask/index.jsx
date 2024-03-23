@@ -2,14 +2,7 @@ import Task from "../Task";
 
 import "./createTask.css";
 
-const CreateTask = ({
-	taskInput,
-	setTaskInput,
-	taskList,
-	setTaskList,
-	taskSearch,
-	setTaskSearch,
-}) => {
+const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 	/**
 	 *
 	 * @param {Object} e
@@ -36,39 +29,9 @@ const CreateTask = ({
 	return (
 		<>
 			<main>
-				{taskList.length > 0 && (
-					<div>
-						<input
-							type="text"
-							placeholder="Search task..."
-							name="taskSrch"
-							value={taskSearch}
-							onChange={(e) => {
-								setTaskSearch(e.target.value);
-							}}
-						/>
-					</div>
-				)}
 				<div>
 					{taskList.map((task, index) => {
-						{
-							/* if there is no search -> create un task (checkbox, task text, delete button) for each element in the taskList state */
-						}
-						if (taskSearch === "") {
-							return (
-								<Task
-									key={task.id}
-									task={task.text}
-									checked={task.checked}
-									index={index}
-									taskList={taskList}
-									setTaskList={setTaskList}
-								/>
-							);
-							{
-								/* update the task list rendered with all the task that include the taskSearch state in their text key */
-							}
-						} else if (task.text.indexOf(taskSearch) !== -1) {
+						if (task.text.indexOf(taskInput) !== -1) {
 							return (
 								<Task
 									key={task.id}

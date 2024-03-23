@@ -9,8 +9,6 @@ import "./App.css";
 function App() {
 	// STRING -> state for the value of the input typed by the user to create task
 	const [taskInput, setTaskInput] = useState("");
-	// STRING -> state for the value of the input typed by the user to search task
-	const [taskSearch, setTaskSearch] = useState("");
 	// ARRAY -> state for the actual list of task -> task is an OBJECT -> text:STRING id:NUMBER checked:BOOLEAN
 	const [taskList, setTaskList] = useState([]);
 	// BOOLEAN -> state to toggle darkmode/lightmode
@@ -30,8 +28,6 @@ function App() {
 				setTaskInput={setTaskInput}
 				taskList={taskList}
 				setTaskList={setTaskList}
-				taskSearch={taskSearch}
-				setTaskSearch={setTaskSearch}
 			/>
 			<Footer isDark={isDark} setIsDark={setIsDark} />
 		</>
