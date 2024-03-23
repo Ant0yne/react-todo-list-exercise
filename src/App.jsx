@@ -13,10 +13,18 @@ function App() {
 	const [taskSearch, setTaskSearch] = useState("");
 	// ARRAY -> state for the actual list of task -> task is an OBJECT -> text:STRING id:NUMBER checked:BOOLEAN
 	const [taskList, setTaskList] = useState([]);
+	// BOOLEAN -> state to toggle darkmode/lightmode
+	const [isDark, setIsDark] = useState(false);
+
+	isDark
+		? ((document.body.style.backgroundColor = "var(--dark)"),
+		  (document.body.style.color = "var(--white)"))
+		: ((document.body.style.backgroundColor = "var(--white)"),
+		  (document.body.style.color = "var(--black)"));
 
 	return (
 		<>
-			<Header />
+			<Header isDark={isDark} setIsDark={setIsDark} />
 			<CreateTask
 				taskInput={taskInput}
 				setTaskInput={setTaskInput}
@@ -25,7 +33,7 @@ function App() {
 				taskSearch={taskSearch}
 				setTaskSearch={setTaskSearch}
 			/>
-			<Footer />
+			<Footer isDark={isDark} setIsDark={setIsDark} />
 		</>
 	);
 }
