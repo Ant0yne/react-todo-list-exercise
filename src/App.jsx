@@ -11,8 +11,6 @@ function App() {
 	const [taskInput, setTaskInput] = useState("");
 	// ARRAY -> state for the actual list of task
 	const [taskList, setTaskList] = useState([]);
-	// ARRAY -> state to store unique id token for task -> JUST UNTIL THE MONGIDB IS SET
-	// const [tokenList, setTokenList] = useState([]);
 
 	return (
 		<>
@@ -22,8 +20,6 @@ function App() {
 				setTaskInput={setTaskInput}
 				taskList={taskList}
 				setTaskList={setTaskList}
-				// tokenList={tokenList}
-				// setTokenList={setTokenList}
 			/>
 			<Footer />
 		</>

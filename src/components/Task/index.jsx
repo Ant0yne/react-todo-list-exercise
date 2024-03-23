@@ -19,6 +19,7 @@ const Task = ({ task, index, taskList, setTaskList }) => {
 	 * @param {Object} e
 	 *
 	 * if the checkbox is checked -> toggle the isLine state then move the task to the bottom of the taskList and rerender
+	 * if the checkbox is unchecked -> toggle the isLine state then move the task to the top of the taskList and rerender
 	 */
 	const handleCheckedTask = async (e) => {
 		if (e.target.checked) {

@@ -2,14 +2,7 @@ import Task from "../Task";
 
 import "./createTask.css";
 
-const CreateTask = ({
-	taskInput,
-	setTaskInput,
-	taskList,
-	setTaskList,
-	// tokenList,
-	// setTokenList,
-}) => {
+const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 	/**
 	 *
 	 * @param {Object} e
