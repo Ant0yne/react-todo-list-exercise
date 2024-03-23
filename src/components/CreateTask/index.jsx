@@ -14,7 +14,7 @@ const CreateTask = ({
 	 *
 	 * @param {Object} e
 	 *
-	 * check if the input is not empty -> add to the taskList input the new task & render it
+	 * check if the input is not empty -> create a task and reset taskInput
 	 */
 	const handleSubmit = (e) => {
 		if (taskInput !== "") {
@@ -23,6 +23,7 @@ const CreateTask = ({
 			const taskTemp = {
 				text: taskInput.toLowerCase(),
 				id: Math.floor(Math.random() * 100000) + 1,
+				checked: false,
 			};
 			TaskListTemp.push(taskTemp);
 			setTaskInput("");
@@ -43,6 +44,7 @@ const CreateTask = ({
 								key={task.id}
 								task={task.text}
 								index={index}
+								checked={task.checked}
 								taskList={taskList}
 								setTaskList={setTaskList}
 							/>
