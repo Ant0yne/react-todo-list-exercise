@@ -2,16 +2,46 @@ import Task from "../Task";
 
 import "./createTask.css";
 
-const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
+const CreateTask = ({
+	taskInput,
+	setTaskInput,
+	taskList,
+	setTaskList,
+	// tokenList,
+	// setTokenList,
+}) => {
+	/**
+	 *
+	 * @param {Object} e
+	 *
+	 * check if the input is not empty -> add to the taskList input the new task & render it
+	 */
+	const handleSubmit = (e) => {
+		if (taskInput !== "") {
+			e.preventDefault();
+			const TaskListTemp = [...taskList];
+			const taskTemp = {
+				text: taskInput.toLowerCase(),
+				id: Math.floor(Math.random() * 100000) + 1,
+			};
+			TaskListTemp.push(taskTemp);
+			setTaskInput("");
+			setTaskList(TaskListTemp);
+		} else {
+			e.preventDefault();
+		}
+	};
+
 	return (
 		<>
 			<main>
 				<div>
+					{/* create un task (checkbox, task text, delete button) for each element in the taskList state */}
 					{taskList.map((task, index) => {
 						return (
 							<Task
-								key={index}
-								task={task}
+								key={task.id}
+								task={task.text}
 								index={index}
 								taskList={taskList}
 								setTaskList={setTaskList}
@@ -20,18 +50,7 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 					})}
 				</div>
 				<div>
-					<form
-						onSubmit={(e) => {
-							if (taskInput !== "") {
-								e.preventDefault();
-								const listTemp = [...taskList];
-								listTemp.push(taskInput);
-								setTaskInput("");
-								setTaskList(listTemp);
-							} else {
-								e.preventDefault();
-							}
-						}}>
+					<form onSubmit={handleSubmit}>
 						<input
 							type="text"
 							placeholder="New task..."
