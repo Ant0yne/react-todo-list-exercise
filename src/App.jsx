@@ -24,8 +24,10 @@ function App() {
 
 	isDark
 		? ((document.body.style.backgroundColor = "var(--dark)"),
+		  (document.body.style.transitionDuration = "0.2s"),
 		  (document.body.style.color = "var(--white)"))
 		: ((document.body.style.backgroundColor = "var(--white)"),
+		  (document.body.style.transitionDuration = "0.2s"),
 		  (document.body.style.color = "var(--black)"));
 
 	return (
