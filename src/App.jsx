@@ -4,6 +4,13 @@ import Header from "./components/Header";
 import CreateTask from "./components/CreateTask";
 import Footer from "./components/Footer";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+	faListCheck,
+	faCircleHalfStroke,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faListCheck, faCircleHalfStroke);
+
 import "./App.css";
 
 function App() {

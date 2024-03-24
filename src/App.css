@@ -6,7 +6,6 @@
 	--black: #000;
 	--dark: #272727;
 	--purple: #5c48d3;
-	--red: #dd0c0c;
 }
 
 * {
@@ -21,27 +20,5 @@ html {
 body {
 	font-size: 1.6rem;
 	line-height: 22px;
-}
-
-h1 {
-	font-size: 3rem;
-	text-align: center;
-	font-weight: bold;
-	margin-bottom: 10px;
-}
-
-button {
-	font-family: "Roboto", sans-serif;
-	font-size: 2rem;
-	border: 1px solid var(--light-grey);
-	border-radius: 5px;
-}
-
-a {
-	text-decoration: none;
-}
-
-a,
-span {
-	font-weight: bold;
+	padding: 10px;
 }

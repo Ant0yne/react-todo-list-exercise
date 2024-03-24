@@ -29,35 +29,37 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 	return (
 		<>
 			<main>
-				<div>
-					{taskList.map((task, index) => {
-						if (task.text.indexOf(taskInput) !== -1) {
-							return (
-								<Task
-									key={task.id}
-									task={task.text}
-									checked={task.checked}
-									index={index}
-									taskList={taskList}
-									setTaskList={setTaskList}
-								/>
-							);
-						}
-					})}
-				</div>
-				<div>
-					<form onSubmit={handleSubmit}>
-						<input
-							type="text"
-							placeholder="New task..."
-							name="taskI"
-							value={taskInput}
-							onChange={(e) => {
-								setTaskInput(e.target.value);
-							}}
-						/>
-						<input type="submit" />
-					</form>
+				<div className="container">
+					<div id="input">
+						<form onSubmit={handleSubmit}>
+							<input
+								type="text"
+								placeholder="New task or Search task"
+								name="taskI"
+								value={taskInput}
+								onChange={(e) => {
+									setTaskInput(e.target.value);
+								}}
+							/>
+							<input type="submit" value="Add Task" />
+						</form>
+					</div>
+					<div id="tasks">
+						{taskList.map((task, index) => {
+							if (task.text.indexOf(taskInput) !== -1) {
+								return (
+									<Task
+										key={task.id}
+										task={task.text}
+										checked={task.checked}
+										index={index}
+										taskList={taskList}
+										setTaskList={setTaskList}
+									/>
+								);
+							}
+						})}
+					</div>
 				</div>
 			</main>
 		</>

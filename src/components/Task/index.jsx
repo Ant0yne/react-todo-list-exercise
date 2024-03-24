@@ -35,7 +35,7 @@ const Task = ({ task, checked, index, taskList, setTaskList }) => {
 
 	return (
 		<>
-			<div>
+			<div className="task">
 				<input
 					type="checkbox"
 					name={`checkbox-${task}`}
