@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./task.css";
 
@@ -36,27 +37,29 @@ const Task = ({ task, checked, index, taskList, setTaskList }) => {
 	return (
 		<>
 			<div className="task">
-				<input
-					type="checkbox"
-					name={`checkbox-${task}`}
-					id={`checkbox-${task}`}
-					checked={checked}
-					onChange={handleCheckedTask}
-				/>
-				<label
-					// if the checked key value of the state is true, line-through the task text
-					style={{ textDecoration: `${checked ? "line-through" : ""}` }}
-					htmlFor={`checkbox-${task}`}>
-					{task}
-				</label>
-				<i>
+				<div className="checkbox-text">
 					<input
-						type="button"
-						name={`button-${task}`}
-						value={"X"}
-						onClick={handleDelete}
+						type="checkbox"
+						name={`checkbox-${task}`}
+						id={`checkbox-${task}`}
+						checked={checked}
+						onChange={handleCheckedTask}
 					/>
-				</i>
+					<label
+						// if the checked key value of the state is true, line-through the task text
+						style={{ textDecoration: `${checked ? "line-through" : ""}` }}
+						htmlFor={`checkbox-${task}`}>
+						{task}
+					</label>
+				</div>
+				<button
+					className="delete-button"
+					type="button"
+					value=""
+					name={`button-${task}`}
+					onClick={handleDelete}>
+					<FontAwesomeIcon icon="trash" />
+				</button>
 			</div>
 		</>
 	);

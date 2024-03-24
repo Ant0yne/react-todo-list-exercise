@@ -6,6 +6,7 @@
 	--black: #000;
 	--dark: #272727;
 	--purple: #5c48d3;
+	--light-purple: #f2f7fd;
 }
 
 * {
@@ -21,4 +22,16 @@ body {
 	font-size: 1.6rem;
 	line-height: 22px;
 	padding: 10px;
+}
+
+button {
+	font-family: "Roboto", sans-serif;
+	font-size: 2rem;
+	border: 1px solid var(--light-grey);
+	border-radius: 5px;
+	transition-duration: 0.1s;
+}
+
+button:hover {
+	cursor: pointer;
 }

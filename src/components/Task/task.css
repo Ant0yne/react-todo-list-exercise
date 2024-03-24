@@ -1,0 +1,30 @@
+.task {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin: 8px 0;
+}
+
+.checkbox-text {
+	display: flex;
+}
+
+.checkbox-text > input {
+	margin: 0;
+}
+
+.checkbox-text > label {
+	padding-left: 5px;
+}
+
+.checkbox-text > input,
+.checkbox-text > label {
+	cursor: pointer;
+}
+
+.delete-button {
+	color: var(--purple);
+	padding-bottom: 2px;
+	background: none;
+	border: none;
+}

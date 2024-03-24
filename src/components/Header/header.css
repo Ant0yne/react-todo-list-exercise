@@ -15,14 +15,6 @@ h1 {
 	/* font-weight: bold; */
 }
 
-button {
-	font-family: "Roboto", sans-serif;
-	font-size: 2rem;
-	border: 1px solid var(--light-grey);
-	border-radius: 5px;
-	transition-duration: 0.1s;
-}
-
 #title {
 	display: flex;
 	align-items: center;
@@ -32,4 +24,5 @@ button {
 #title > i {
 	font-size: 3rem;
 	color: var(--purple);
+	padding-bottom: 1px;
 }

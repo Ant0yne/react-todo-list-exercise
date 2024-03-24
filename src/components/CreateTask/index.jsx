@@ -30,8 +30,8 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 		<>
 			<main>
 				<div className="container">
-					<div id="input">
-						<form onSubmit={handleSubmit}>
+					<form onSubmit={handleSubmit}>
+						<div id="form">
 							<input
 								type="text"
 								placeholder="New task or Search task"
@@ -41,9 +41,9 @@ const CreateTask = ({ taskInput, setTaskInput, taskList, setTaskList }) => {
 									setTaskInput(e.target.value);
 								}}
 							/>
-							<input type="submit" value="Add Task" />
-						</form>
-					</div>
+							<input type="submit" value="Add Task" onSubmit={handleSubmit} />
+						</div>
+					</form>
 					<div id="tasks">
 						{taskList.map((task, index) => {
 							if (task.text.indexOf(taskInput) !== -1) {
