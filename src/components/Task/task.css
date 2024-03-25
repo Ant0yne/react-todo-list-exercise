@@ -1,12 +1,19 @@
 .task {
 	display: flex;
 	align-items: center;
-	gap: 10px;
-	margin: 8px 0;
+	gap: 15px;
+	margin: 6px 0;
+}
+
+.task > button > svg {
+	font-size: 1.5rem;
 }
 
 .checkbox-text {
+	background-color: var(--white-grey);
+	border-radius: 5px;
 	display: flex;
+	padding: 6px 5px;
 }
 
 .checkbox-text > input {

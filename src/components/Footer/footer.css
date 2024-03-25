@@ -4,6 +4,12 @@ footer {
 	display: flex;
 	justify-content: center;
 	transition-duration: 0.2s;
+	position: fixed;
+	bottom: 0;
+	/* background-color: var(--white); */
+	border-top: 1px solid var(--light-grey);
+	margin: 0 -10px;
+	padding: 10px 0;
 }
 
 a {
@@ -14,4 +20,10 @@ a {
 a,
 span {
 	font-weight: bold;
+}
+
+@media (min-width: 768px) {
+	footer {
+		margin: 0 -20px;
+	}
 }

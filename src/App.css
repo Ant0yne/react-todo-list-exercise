@@ -2,9 +2,11 @@
 
 :root {
 	--light-grey: #d3d3d3;
+	--white-grey: #eeeeee;
 	--white: #fff;
 	--black: #000;
 	--dark: #272727;
+	--dark-grey: #161616;
 	--purple: #5c48d3;
 	--light-purple: #f2f7fd;
 }

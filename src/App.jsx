@@ -22,6 +22,7 @@ function App() {
 	// BOOLEAN -> state to toggle darkmode/lightmode
 	const [isDark, setIsDark] = useState(false);
 
+	// Dark mode at body level
 	isDark
 		? ((document.body.style.backgroundColor = "var(--dark)"),
 		  (document.body.style.transitionDuration = "0.2s"),
@@ -38,6 +39,7 @@ function App() {
 				setTaskInput={setTaskInput}
 				taskList={taskList}
 				setTaskList={setTaskList}
+				isDark={isDark}
 			/>
 			<Footer isDark={isDark} setIsDark={setIsDark} />
 		</>

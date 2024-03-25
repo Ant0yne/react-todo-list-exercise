@@ -28,6 +28,19 @@
 	cursor: pointer;
 }
 
+/* .container {
+	height: 70vh;
+}
+
+#tasks {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	overflow: hidden;
+	overflow-y: scroll;
+} */
+
 @media (min-width: 768px) {
 	#form {
 		flex-direction: row;

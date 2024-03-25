@@ -3,7 +3,12 @@ import "./footer.css";
 const Footer = ({ isDark }) => {
 	return (
 		<>
-			<footer>
+			<footer
+				style={
+					isDark
+						? { backgroundColor: "var(--dark)" }
+						: { backgroundColor: "var(--white)" }
+				}>
 				<p>
 					Made with <span>React</span> at{" "}
 					<a

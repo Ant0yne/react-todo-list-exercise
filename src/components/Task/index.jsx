@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import "./task.css";
 
-const Task = ({ task, checked, index, taskList, setTaskList }) => {
+const Task = ({ task, checked, index, taskList, setTaskList, isDark }) => {
 	/**
 	 * delete the task when the button is clicked
 	 */
@@ -37,7 +37,13 @@ const Task = ({ task, checked, index, taskList, setTaskList }) => {
 	return (
 		<>
 			<div className="task">
-				<div className="checkbox-text">
+				<div
+					className="checkbox-text"
+					style={
+						isDark
+							? { backgroundColor: "var(--dark-grey)" }
+							: { backgroundColor: "var(--white-grey)" }
+					}>
 					<input
 						type="checkbox"
 						name={`checkbox-${task}`}
