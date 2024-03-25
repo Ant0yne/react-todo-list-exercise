@@ -1,7 +1,7 @@
 #form {
 	display: flex;
-	flex-direction: column;
-	gap: 10px;
+	flex-direction: column-reverse;
+	gap: 20px;
 }
 
 #form > input:first-child {
@@ -26,4 +26,20 @@
 
 #form > input:last-child:hover {
 	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	#form {
+		flex-direction: row;
+	}
+	#form > input:first-child {
+		flex: 1;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container {
+		width: 1024px;
+		margin: 0 auto;
+	}
 }

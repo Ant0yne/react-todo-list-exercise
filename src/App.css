@@ -35,3 +35,9 @@ button {
 button:hover {
 	cursor: pointer;
 }
+
+@media (min-width: 768px) {
+	body {
+		padding: 20px;
+	}
+}
